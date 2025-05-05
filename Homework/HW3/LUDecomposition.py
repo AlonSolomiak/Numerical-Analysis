@@ -108,7 +108,7 @@ def MatrixVectorMultiply(A: np.ndarray, v: np.ndarray) -> np.ndarray:
     
     for matrix_row in range(A.shape[0]):
         for matrix_col in range(A.shape[1]):
-            result[matrix_col] += A[matrix_row,matrix_col] * v[matrix_col]
+            result[matrix_row] += A[matrix_row,matrix_col] * v[matrix_col]
     
     return result
 
