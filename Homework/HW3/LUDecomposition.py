@@ -62,7 +62,7 @@ def InitializeLUP(A: np.ndarray) -> Tuple[int, np.ndarray, np.ndarray, np.ndarra
 def FindMaxRow(U: np.ndarray, i: int) -> Tuple[int, float]:
     max_row = i
     max_val = abs(U[i][i])
-    for row in range(i + 1, n):
+    for row in range(i + 1, U.shape[0]):
         if abs(U[row][i]) > max_val: # Because we are looking for the largest ABSOLUTE value
             max_val = abs(U[row][i])
             max_row = row
