@@ -106,7 +106,7 @@ def SolveUxy(U: np.ndarray, y: np.ndarray) -> np.ndarray:
 def MatrixVectorMultiply(A: np.ndarray, v: np.ndarray) -> np.ndarray:
     result = np.array([0]*A.shape[1], dtype=float)
     
-    for matrix_col in range(A.shape[1]):
+    for matrix_row in range(A.shape[0]):
         for matrix_row in range(A.shape[0]):
             result[matrix_col] += A[matrix_row,matrix_col] * v[matrix_row]
     
