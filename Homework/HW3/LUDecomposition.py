@@ -118,3 +118,5 @@ def ValidateInput(v: np.ndarray, A: np.ndarray) -> None:
         raise ValueError("Input should be a vector and a matrix")
     if v.shape[0] != A.shape[0]:
         raise ValueError("The vector's length does not match the matrix' width")
+    if A.shape[0] != A.shape[1]:
+        raise ValueError("The matrix is not square")
