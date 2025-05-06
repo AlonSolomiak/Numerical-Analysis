@@ -9,7 +9,7 @@ def LUDecomposition(A: np.ndarray,b: np.ndarray) -> np.ndarray:
     y = SolveLyb(L, Pb)
     x = SolveUxy(U, y)
 
-    return x
+    return x, L, U
 
 
 def GetLU(A: np.ndarray) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
