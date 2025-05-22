@@ -5,7 +5,7 @@ def GaussSeidel(A: np.ndarray, b: np.ndarray, m: int) -> np.ndarray:
     x_i = np.array([0] * n, dtype=float)
     x_f = np.array([0] * n, dtype=float)
     
-    while convergence_criterion(x_i, x_f, m):
+    while True:
         print(x_i)
         for i in range(n):
             x_i[i] = x_f[i]
@@ -18,11 +18,13 @@ def GaussSeidel(A: np.ndarray, b: np.ndarray, m: int) -> np.ndarray:
                 sum2 += A[i][j] * x_i[j]
 
             x_f[i] = (b[i] - sum1 - sum2) / A[i][i]
+        
+        if convergence_criterion(x_i, x_f, m):
+            break
 
     return x_f
         
 
 def convergence_criterion(x_i: np.ndarray, x_f: np.ndarray, m: int) -> bool:
     max_diff = max(abs(x_f[i] - x_i[i]) for i in range(1, len(x_i)))
-    print(max_diff)
-    return max_diff > 10**-m
+    return max_diff < 10**-m
