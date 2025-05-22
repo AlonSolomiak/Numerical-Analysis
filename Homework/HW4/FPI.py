@@ -7,9 +7,7 @@ def FPI(x0, m, n):
     return g(x0), i+1
 
 def convergence_criterion(x0, m, n):
-    if abs(x0 - g(x0)) < 10**-m and abs(f(x0)) < 10**-n:
-        return False
-    return True
+    return abs(x0 - g(x0)) > 10**-m or abs(f(x0)) > 10**-n
 
 def f(x: float) -> float:
     return x**3 + 2*x + 2
