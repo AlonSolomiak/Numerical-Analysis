@@ -6,7 +6,6 @@ def GaussSeidel(A: np.ndarray, b: np.ndarray, m: int) -> np.ndarray:
     x_f = np.array([0] * n, dtype=float)
     
     while True:
-        print(x_f)
         for i in range(n):
             x_i[i] = x_f[i]
         for i in range(n):
