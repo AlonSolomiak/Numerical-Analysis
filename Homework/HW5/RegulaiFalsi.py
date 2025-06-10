@@ -1,3 +1,6 @@
+def f(x):
+    raise NotImplementedError
+
 def RegulaiFalsi(XL, XR, n):
     x = XL - (f(XL) * (XR - XL)) / (f(XR) - f(XL))
     i = 0
