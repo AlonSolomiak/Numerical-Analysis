@@ -6,6 +6,6 @@ def Lagrange_poly(X: np.ndarray, k: int, x_eval: float) -> float:
     lk = 1
     for i in range(n):
         if i != k:
-            lk *= (x_eval - X[i]) / (X[k] - X[i])
+            lk *= (x_eval - X[i])
 
     return lk
