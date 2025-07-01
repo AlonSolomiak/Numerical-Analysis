@@ -1,12 +1,11 @@
 import numpy as np
-import math
 
 def NumericalDerivative(x: np.ndarray,f: np.ndarray):
     n = len(x)
     if n != len(f) or n < 3:
         raise ValueError("x and f must have the same length and at least three points.")
     
-    dx = math.abs(x[1] - x[0])  # Assuming uniform spacing for simplicity
+    dx = abs(x[1] - x[0])  # Assuming uniform spacing for simplicity
     df = np.array([0]*n, dtype=float)
     ddf = np.array([0]*n, dtype=float)
 
